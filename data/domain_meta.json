@@ -1,0 +1,138 @@
+{
+  "key": "sapm-coal",
+  "meta_fill": {
+    "pi": "$990B",
+    "psa": "-$5.05T",
+    "mu": "0.164",
+    "kappa": "1.08"
+  },
+  "psf": {
+    "pi_c": 110.0,
+    "pi_p": 990.0,
+    "w_c": 6040.0,
+    "kappa": 1.08
+  },
+  "monte_carlo": {
+    "mean": 6.15,
+    "ci_lo": 4.8,
+    "ci_hi": 11.2,
+    "pct_hw": 99.9,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Climate damages (CO2)",
+        "dist": "triangular",
+        "lo": 2200,
+        "hi": 3500,
+        "mode": 2850
+      },
+      {
+        "name": "Air pollution mortality",
+        "dist": "triangular",
+        "lo": 2800,
+        "hi": 4700,
+        "mode": 3760
+      },
+      {
+        "name": "Coal mine methane",
+        "dist": "triangular",
+        "lo": 55,
+        "hi": 95,
+        "mode": 72
+      },
+      {
+        "name": "Extraction harms",
+        "dist": "uniform",
+        "lo": 30,
+        "hi": 75,
+        "mode": 50
+      },
+      {
+        "name": "Mercury neurotoxicity",
+        "dist": "triangular",
+        "lo": 6,
+        "hi": 12,
+        "mode": 8.7
+      },
+      {
+        "name": "Governance capture",
+        "dist": "triangular",
+        "lo": 80,
+        "hi": 160,
+        "mode": 117
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "U.S. coal power <5% of generation mix",
+      "year": 2030,
+      "confidence": "High",
+      "status": "Currently ~16%; EIA projects continued decline",
+      "crossed": false
+    },
+    {
+      "domain": "Global coal power peak",
+      "year": 2025,
+      "confidence": "Medium",
+      "status": "IEA projects 2025 peak; China growth adds uncertainty",
+      "crossed": false
+    },
+    {
+      "domain": "OECD coal phase-out completion",
+      "year": 2035,
+      "confidence": "Medium",
+      "status": "PPCA commitments; Poland and Czech Republic lagging",
+      "crossed": false
+    },
+    {
+      "domain": "Global coal peak (including Asia)",
+      "year": 2035,
+      "confidence": "Low",
+      "status": "India and Southeast Asia growth offsetting OECD declines",
+      "crossed": false
+    },
+    {
+      "domain": "Solar LCOE below coal operating cost globally",
+      "year": 2024,
+      "confidence": "High",
+      "status": "IRENA: solar at $0.033/kWh vs coal LCOE $0.05-0.18/kWh",
+      "crossed": true
+    }
+  ],
+  "axioms": {
+    "type": "institutional",
+    "items": [
+      {
+        "id": "I1",
+        "name": "Stranded asset lock-in",
+        "description": "$1.4T in existing coal capacity creates political economy of delay \u2014 each year of continued operation reduces stranded-asset write-offs for owners and host governments."
+      },
+      {
+        "id": "I2",
+        "name": "Regulatory capture through employment concentration",
+        "description": "Coal mining employment concentrated in swing electoral districts (Wyoming, West Virginia, Poland, India's coal belt) gives extractors disproportionate political power relative to their economic contribution."
+      },
+      {
+        "id": "I3",
+        "name": "Externality invisibility in energy pricing",
+        "description": "Electricity prices in most markets exclude social cost of carbon and mortality costs of air pollution, making coal appear cheaper than renewables and sustaining demand past the economic crossover point."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W computed via SCC ($190/tCO2) on 8.3 GtCO2/year coal combustion emissions plus WHO-estimated 800K annual deaths from coal air pollution (VSL-weighted at $3M average globally) plus mercury and methane channels.",
+    "cooperative_baseline": "880 Mt/year of essential metallurgical and chemical coal at $110B revenue, with thermal coal fully substituted by wind and solar at already-achieved cost parity.",
+    "key_sources": [
+      "IEA, Coal 2024 report",
+      "WHO, Air Quality guidelines (2021)",
+      "IRENA, Renewable Power Generation Costs (2024)",
+      "Global Coal Tracker, GCPT database (2024)"
+    ],
+    "falsification": [
+      "F1: Demonstrate that solar and wind cannot reliably replace coal's grid role (baseload, dispatchability) without prohibitive storage costs in a large economy natural experiment.",
+      "F2: Show that coal mortality estimates from PM2.5 exposure are an order of magnitude lower than WHO and epidemiological consensus, requiring a systematic error in cohort studies.",
+      "F3: Demonstrate that Social Cost of Carbon should be near zero, requiring discount rates >7% and climate sensitivity at the bottom of the IPCC AR6 range simultaneously."
+    ]
+  }
+}

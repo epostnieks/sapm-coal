@@ -12,8 +12,8 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, R
 const META = {
   title: "Global Coal Combustion",
   subtitle: "System Welfare Cost of Non-Essential Thermal Coal Revenue",
-  beta: "6.1",
-  ci: "4.8–11.2",
+  beta: "6.96",
+  ci: "5.55–8.62",
   pi: "$61.0B",
   psa: "−$4.94T/yr",
   mu: "0.164 (16.4%)",
@@ -69,23 +69,24 @@ const HIGHLIGHTS = [
         "Cross-domain positioning: Coal (6.1) between Aviation (4.6) and Oil & Gas (6.2), well below PFAS (35.2) but substantially above nuclear energy (0.7).",
 ];
 
-const PSF_PARAMS = {pi_c:147.5,pi_p:900.0,w_c:1350.0,kappa:0.88};
-const PSF_DATA = [{pi:14.75,w:1313.03},{pi:60.96,w:1334.29},{pi:107.17,w:1346.59},{pi:153.38,w:1349.93},{pi:199.59,w:1344.31},{pi:245.8,w:1329.73},{pi:292.01,w:1306.19},{pi:338.22,w:1273.69},{pi:384.43,w:1232.23},{pi:430.64,w:1181.81},{pi:476.85,w:1122.43},{pi:523.06,w:1054.09},{pi:569.27,w:976.79},{pi:615.48,w:890.53},{pi:661.69,w:795.31},{pi:707.9,w:691.13},{pi:754.11,w:577.99},{pi:800.32,w:455.89},{pi:846.53,w:324.83},{pi:892.74,w:184.81},{pi:938.95,w:35.83},{pi:985.16,w:-122.11},{pi:1031.37,w:-289.0},{pi:1077.58,w:-464.86},{pi:1123.79,w:-649.68},{pi:1170.0,w:-843.46}];
+const PSF_PARAMS = {pi_c:110.0,pi_p:990.0,w_c:6040.0,kappa:1.08};
+const PSF_DATA = [{pi:11.0,w:5957.44},{pi:53.53,w:6013.14},{pi:96.07,w:6038.37},{pi:138.6,w:6033.11},{pi:181.13,w:5997.38},{pi:223.67,w:5931.16},{pi:266.2,w:5834.48},{pi:308.73,w:5707.32},{pi:351.27,w:5549.65},{pi:393.8,w:5361.55},{pi:436.33,w:5142.97},{pi:478.87,w:4893.85},{pi:521.4,w:4614.31},{pi:563.93,w:4304.31},{pi:606.47,w:3963.74},{pi:649.0,w:3592.78},{pi:691.53,w:3191.35},{pi:734.07,w:2759.33},{pi:776.6,w:2296.95},{pi:819.13,w:1804.09},{pi:861.67,w:1280.63},{pi:904.2,w:726.81},{pi:946.73,w:142.53},{pi:989.27,w:-472.38},{pi:1031.8,w:-1117.62},{pi:1074.33,w:-1793.34},{pi:1116.87,w:-2499.69},{pi:1159.4,w:-3236.36},{pi:1201.93,w:-4003.5},{pi:1244.47,w:-4801.3},{pi:1287.0,w:-5629.39}];
 
-const MC_PARAMS = {n_draws:10000,mean:6.1,ci_lo:4.2,ci_hi:8.9,pct_hw:96.8,channels:[{name:"Climate forcing (CO₂ at combustion)",dist:"log-normal",lo:2.4,hi:4.0},{name:"PM2.5 and respiratory mortality",dist:"log-normal",lo:1.0,hi:2.2},{name:"Mercury and heavy metal contamination",dist:"triangular",lo:0.3,hi:1.0},{name:"Water contamination and mining externalities",dist:"uniform",lo:0.2,hi:0.8}]};
-const MC_DATA = [{bin:"1.4",count:4},{bin:"1.9",count:14},{bin:"2.4",count:39},{bin:"2.9",count:93},{bin:"3.4",count:195},{bin:"3.9",count:361},{bin:"4.4",count:590},{bin:"4.9",count:852},{bin:"5.4",count:1089},{bin:"5.9",count:1231},{bin:"6.3",count:1231},{bin:"6.8",count:1089},{bin:"7.3",count:852},{bin:"7.8",count:590},{bin:"8.3",count:361},{bin:"8.8",count:195},{bin:"9.3",count:93},{bin:"9.8",count:39},{bin:"10.3",count:14},{bin:"10.8",count:4}];
+const MC_HIST = [{bin:"5.09",lo:5.0923,hi:5.1772,count:47},{bin:"5.18",lo:5.1772,hi:5.2621,count:44},{bin:"5.26",lo:5.2621,hi:5.3470,count:72},{bin:"5.35",lo:5.3470,hi:5.4320,count:94},{bin:"5.43",lo:5.4320,hi:5.5169,count:122},{bin:"5.52",lo:5.5169,hi:5.6018,count:161},{bin:"5.60",lo:5.6018,hi:5.6867,count:194},{bin:"5.69",lo:5.6867,hi:5.7716,count:196},{bin:"5.77",lo:5.7716,hi:5.8566,count:224},{bin:"5.86",lo:5.8566,hi:5.9415,count:261},{bin:"5.94",lo:5.9415,hi:6.0264,count:303},{bin:"6.03",lo:6.0264,hi:6.1113,count:298},{bin:"6.11",lo:6.1113,hi:6.1962,count:329},{bin:"6.20",lo:6.1962,hi:6.2812,count:317},{bin:"6.28",lo:6.2812,hi:6.3661,count:364},{bin:"6.37",lo:6.3661,hi:6.4510,count:298},{bin:"6.45",lo:6.4510,hi:6.5359,count:305},{bin:"6.54",lo:6.5359,hi:6.6209,count:343},{bin:"6.62",lo:6.6209,hi:6.7058,count:349},{bin:"6.71",lo:6.7058,hi:6.7907,count:320},{bin:"6.79",lo:6.7907,hi:6.8756,count:289},{bin:"6.88",lo:6.8756,hi:6.9605,count:300},{bin:"6.96",lo:6.9605,hi:7.0455,count:280},{bin:"7.05",lo:7.0455,hi:7.1304,count:304},{bin:"7.13",lo:7.1304,hi:7.2153,count:280},{bin:"7.22",lo:7.2153,hi:7.3002,count:256},{bin:"7.30",lo:7.3002,hi:7.3851,count:308},{bin:"7.39",lo:7.3851,hi:7.4701,count:285},{bin:"7.47",lo:7.4701,hi:7.5550,count:238},{bin:"7.55",lo:7.5550,hi:7.6399,count:249},{bin:"7.64",lo:7.6399,hi:7.7248,count:258},{bin:"7.72",lo:7.7248,hi:7.8098,count:226},{bin:"7.81",lo:7.8098,hi:7.8947,count:194},{bin:"7.89",lo:7.8947,hi:7.9796,count:204},{bin:"7.98",lo:7.9796,hi:8.0645,count:207},{bin:"8.06",lo:8.0645,hi:8.1494,count:172},{bin:"8.15",lo:8.1494,hi:8.2344,count:156},{bin:"8.23",lo:8.2344,hi:8.3193,count:179},{bin:"8.32",lo:8.3193,hi:8.4042,count:128},{bin:"8.40",lo:8.4042,hi:8.4891,count:128},{bin:"8.49",lo:8.4891,hi:8.5740,count:101},{bin:"8.57",lo:8.5740,hi:8.6590,count:111},{bin:"8.66",lo:8.6590,hi:8.7439,count:84},{bin:"8.74",lo:8.7439,hi:8.8288,count:93},{bin:"8.83",lo:8.8288,hi:8.9137,count:53},{bin:"8.91",lo:8.9137,hi:8.9987,count:62},{bin:"9.00",lo:8.9987,hi:9.0836,count:34},{bin:"9.08",lo:9.0836,hi:9.1685,count:25},{bin:"9.17",lo:9.1685,hi:9.2534,count:26},{bin:"9.25",lo:9.2534,hi:9.3383,count:29}];
+const MC_STATS = {mean:6.9639,median:6.8799,ci_lo:5.5534,ci_hi:8.6233,pct_hw:100.0,pct_above_3:100.0,pct_above_5:99.8,min:4.7148,max:10.1450,n_draws:10000,seed:42};
+const MC_CHANNELS = [{name:"Climate damages (CO2)",mean:2849.58,p5:2403.23,p50:2850.47,p95:3294.95,share:0.4154},{name:"Air pollution mortality",mean:3756.62,p5:3102.33,p50:3753.43,p95:4401.68,share:0.5476},{name:"Coal mine methane",mean:73.96,p5:60.82,p50:73.54,p95:88.20,share:0.0108},{name:"Extraction harms",mean:52.37,p5:32.21,p50:52.25,p95:72.57,share:0.0076},{name:"Mercury neurotoxicity",mean:8.89,p5:6.89,p50:8.84,p95:11.00,share:0.0013},{name:"Governance capture",mean:119.13,p5:92.47,p50:118.54,p95:147.37,share:0.0174}];
+const MC_WELFARE = {mean:6860.56,ci_lo:6080.02,ci_hi:7629.28};
 
-const THRESHOLDS = [{domain:"1.5°C-compatible coal phaseout (OECD)",year:2030,status:"IPCC AR6: OECD coal power must end by 2030 for 1.5°C; 2024 coal generation still 17% of OECD electricity (IEA)",confidence:"High",crossed:false},{domain:"Global coal phaseout (all nations)",year:2040,status:"COP28 pledged ‘transitioning away from fossil fuels’; China added 47.4 GW new coal in 2023 (GEM)",confidence:"Medium",crossed:false},{domain:"Coal financing withdrawal",year:2025,status:"130+ financial institutions adopted coal exclusion policies; but $470B in coal financing continued in 2023 (Urgewald)",confidence:"High",crossed:true},{domain:"PM2.5 mortality cost recognition",year:2022,status:"WHO revised PM2.5 guidelines to 5 μg/m³ (2021); coal-attributable mortality: 800,000 deaths/yr (Vohra et al. 2021, Environmental Research)",confidence:"High",crossed:true}];
+const THRESHOLDS = [{domain:"U.S. coal power <5% of generation mix",year:2030,confidence:"High",status:"Currently ~16%; EIA projects continued decline",crossed:false},{domain:"Global coal power peak",year:2025,confidence:"Medium",status:"IEA projects 2025 peak; China growth adds uncertainty",crossed:false},{domain:"OECD coal phase-out completion",year:2035,confidence:"Medium",status:"PPCA commitments; Poland and Czech Republic lagging",crossed:false},{domain:"Global coal peak (including Asia)",year:2035,confidence:"Low",status:"India and Southeast Asia growth offsetting OECD declines",crossed:false},{domain:"Solar LCOE below coal operating cost globally",year:2024,confidence:"High",status:"IRENA: solar at $0.033/kWh vs coal LCOE $0.05-0.18/kWh",crossed:true}];
 
-const AXIOMS = {type:"institutional",items:[{id:"I1",name:"Stranded Asset Political Economy",description:"Global coal assets valued at $1.1T with 30–40 year expected lifespans; coal-dependent regions (Appalachia, Shanxi, Jharkhand, Mpumalanga) create concentrated political constituencies that block transition — e.g., Manchin (WV) blocked US climate legislation 2021–22."},{id:"I2",name:"Sovereign Energy Security Override",description:"China (54%), India (75%), and Indonesia (62%) depend on coal for electricity; energy security doctrine overrides climate commitments, with 136 GW of new coal under construction globally (GEM 2024)."},{id:"I3",name:"Subsidy Lock-in",description:"IMF (2023) estimates $5.9T in global fossil fuel subsidies (including externalities), of which coal receives $3.2T; explicit production and consumption subsidies of $350B/yr create price signals that perpetuate demand."}]};
+const AXIOMS = {type:"institutional",items:[{id:"I1",name:"Stranded asset lock-in",description:"$1.4T in existing coal capacity creates political economy of delay — each year of continued operation reduces stranded-asset write-offs for owners and host governments."},{id:"I2",name:"Regulatory capture through employment concentration",description:"Coal mining employment concentrated in swing electoral districts (Wyoming, West Virginia, Poland, India\'s coal belt) gives extractors disproportionate political power relative to their economic contribution."},{id:"I3",name:"Externality invisibility in energy pricing",description:"Electricity prices in most markets exclude social cost of carbon and mortality costs of air pollution, making coal appear cheaper than renewables and sustaining demand past the economic crossover point."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W = −[SCC × 14.6 GtCO₂ + VSL × 800K deaths + Mercury_damage + Mining_externalities]. At SCC = $185/tCO₂, climate damage alone = $2.7T/yr; Vohra et al. (2021) estimate 800K premature deaths/yr, at VSL $10.95M (EPA 2024) = $2.2T additional.",
-  cooperative_baseline: "Managed coal phaseout following IEA Net Zero pathway: OECD exit by 2030, global exit by 2040; cooperative Π_C = $147.5B reflects just-transition supported residual use for steel coking and legacy capacity with CCS.",
-  falsification: ["If coal CCS achieves 90%+ capture at <$50/tCO₂ and deploys at scale, β_W could drop below institutional threshold.","If coal phaseout achieves IEA Net Zero trajectory (OECD by 2030), institutional failure is being corrected.","If Monte Carlo robustness for β_W > 1 falls below 80%, point estimate is unreliable.","If coal health costs are substantially lower than Vohra et al. estimates, PM2.5 channel narrows significantly."],
-  key_sources: ["IEA (2023). World Energy Outlook 2023. International Energy Agency.","Vohra, K. et al. (2021). Global mortality from outdoor fine particle pollution generated by fossil fuel combustion. Environmental Research 195.","IMF (2023). Fossil Fuel Subsidies Data. IMF Working Paper 2023/169.","Global Energy Monitor (2024). Global Coal Plant Tracker. GEM.","IPCC (2022). Climate Change 2022: Mitigation. Working Group III, AR6."]
+  welfare_function: "W computed via SCC ($190/tCO2) on 8.3 GtCO2/year coal combustion emissions plus WHO-estimated 800K annual deaths from coal air pollution (VSL-weighted at $3M average globally) plus mercury and methane channels.",
+  cooperative_baseline: "880 Mt/year of essential metallurgical and chemical coal at $110B revenue, with thermal coal fully substituted by wind and solar at already-achieved cost parity.",
+  falsification: ["F1: Demonstrate that solar and wind cannot reliably replace coal\'s grid role (baseload, dispatchability) without prohibitive storage costs in a large economy natural experiment.","F2: Show that coal mortality estimates from PM2.5 exposure are an order of magnitude lower than WHO and epidemiological consensus, requiring a systematic error in cohort studies.","F3: Demonstrate that Social Cost of Carbon should be near zero, requiring discount rates >7% and climate sensitivity at the bottom of the IPCC AR6 range simultaneously."],
+  key_sources: ["IEA, Coal 2024 report","WHO, Air Quality guidelines (2021)","IRENA, Renewable Power Generation Costs (2024)","Global Coal Tracker, GCPT database (2024)"]
 };
-
 
 // ─── Color palette ───────────────────────────────────────────────────────────
 const C = {
@@ -331,51 +332,58 @@ export default function PSTCoalDashboard() {
             </div>
           </div>
         )}
-
         {/* MONTE CARLO TAB */}
         {tab === 'monte-carlo' && (
           <div>
-            <SectionTitle>Monte Carlo Robustness — {MC_PARAMS.n_draws.toLocaleString()} Draws</SectionTitle>
+            <SectionTitle>Monte Carlo Simulation — {MC_STATS.n_draws.toLocaleString()} Draws (seed={MC_STATS.seed})</SectionTitle>
             <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:4,padding:16,marginBottom:16}}>
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={MC_DATA} margin={{top:10,right:30,left:20,bottom:10}}>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={MC_HIST} margin={{top:10,right:30,left:20,bottom:30}}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:10}} />
+                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:9}} angle={-45} textAnchor="end" interval={4} />
                   <YAxis stroke={C.muted} tick={{fontFamily:C.mono,fontSize:11}} />
-                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} />
+                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} formatter={(v)=>[v,'Draws']} />
                   <Bar dataKey="count" fill={C.gold} />
-                  <ReferenceLine x={MC_PARAMS.mean.toFixed(1)} stroke={C.crimson} strokeDasharray="5 5" label={{value:'β̄='+MC_PARAMS.mean,fill:C.crimson,fontFamily:C.mono,fontSize:11}} />
+                  <ReferenceLine x={MC_STATS.mean.toFixed(2)} stroke={C.crimson} strokeWidth={2} strokeDasharray="5 5" label={{value:'μ='+MC_STATS.mean.toFixed(2),fill:C.crimson,fontFamily:C.mono,fontSize:11,position:'top'}} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div style={{display:'flex',gap:12,flexWrap:'wrap',marginBottom:16}}>
-              <Metric label="MEAN β_W" value={MC_PARAMS.mean} color={C.gold} />
-              <Metric label="90% CI" value={'['+MC_PARAMS.ci_lo+', '+MC_PARAMS.ci_hi+']'} color={C.muted} />
-              <Metric label="% HOLLOW WIN" value={MC_PARAMS.pct_hw+'%'} color={MC_PARAMS.pct_hw > 90 ? C.crimson : C.gold} />
+              <Metric label="MEAN β_W" value={MC_STATS.mean.toFixed(2)} sub={'Median: '+MC_STATS.median.toFixed(2)} color={C.gold} />
+              <Metric label="90% CI" value={'['+MC_STATS.ci_lo.toFixed(2)+', '+MC_STATS.ci_hi.toFixed(2)+']'} sub={'Range: '+MC_STATS.min.toFixed(2)+'–'+MC_STATS.max.toFixed(2)} color={C.muted} />
+              <Metric label="% HOLLOW WIN" value={MC_STATS.pct_hw.toFixed(1)+'%'} sub={'β_W > 1 in all draws'} color={MC_STATS.pct_hw > 95 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 3" value={MC_STATS.pct_above_3.toFixed(1)+'%'} color={MC_STATS.pct_above_3 > 90 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 5" value={MC_STATS.pct_above_5.toFixed(1)+'%'} color={MC_STATS.pct_above_5 > 50 ? '#D97706' : C.gold} />
             </div>
-            {MC_PARAMS.channels && MC_PARAMS.channels.length > 0 && (
-              <div style={{padding:16,background:C.panel,border:`1px solid ${C.border}`,borderRadius:4}}>
-                <div style={{fontFamily:C.mono,fontSize:12,color:C.gold,marginBottom:8}}>DISTRIBUTION PARAMETERS</div>
-                <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
-                  <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>CHANNEL</th>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>DISTRIBUTION</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>LOW</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>HIGH</th>
-                  </tr></thead>
-                  <tbody>
-                    {MC_PARAMS.channels.map((ch,i) => (
-                      <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
-                        <td style={{padding:'6px 10px',color:C.text}}>{ch.name}</td>
-                        <td style={{padding:'6px 10px',color:C.muted}}>{ch.dist}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.lo}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.hi}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <SectionTitle>Channel Welfare Contributions</SectionTitle>
+            <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
+              <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
+                <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CHANNEL</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>MEAN $B</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P5</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P50</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P95</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>SHARE</th>
+              </tr></thead>
+              <tbody>
+                {MC_CHANNELS.map((ch,i) => (
+                  <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`,background:i%2===0?C.panel:C.bg}}>
+                    <td style={{padding:'8px 12px',color:C.text,fontFamily:C.serif,fontSize:14}}>{ch.name}</td>
+                    <td style={{padding:'8px 12px',color:C.gold,textAlign:'right',fontWeight:600}}>{ch.mean.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p5.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p50.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p95.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{(ch.share*100).toFixed(1)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div style={{marginTop:16,padding:12,background:'rgba(245,158,11,0.06)',border:`1px solid rgba(245,158,11,0.15)`,borderRadius:4}}>
+              <div style={{fontFamily:C.mono,fontSize:11,color:C.muted}}>Total welfare cost: <span style={{color:C.gold}}>${MC_WELFARE.mean.toFixed(1)}B</span> (90% CI: ${MC_WELFARE.ci_lo.toFixed(1)}B – ${MC_WELFARE.ci_hi.toFixed(1)}B) · Source: sapm_monte_carlo.py (seed=42)</div>
+            </div>
+          </div>
+        )}
+
           </div>
         )}
 
