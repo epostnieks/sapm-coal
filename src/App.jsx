@@ -60,7 +60,7 @@ const CROSS_DOMAIN = [
 ];
 
 const HIGHLIGHTS = [
-        "β_W = 6.1 [4.8–11.2 90% CI]. Probability β_W > 1.0: >99.99%. Probability β_W > 3.0: >99%.",
+        "βW = 6.1 [4.8–11.2 90% CI]. Probability βW > 1.0: >99.99%. Probability βW > 3.0: >99%.",
         "System-adjusted payoff = −$4.94T/yr. Break-even mitigation rate μ* = 16.4%. Current internalization: ~3–5%.",
         "No impossibility theorem: coal combustion operates within existing regulatory authority (EPA §111, EU ETS, PPCA). Welfare failure is institutional, not constitutive.",
         "Climate channel: SCC at $185/t CO₂ (Rennert et al.) applied to ~8.3 Gt CO₂/yr from coal combustion.",
@@ -320,7 +320,7 @@ export default function PSTCoalDashboard() {
                   <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CAPM ANALOGUE</th>
                 </tr></thead>
                 <tbody>
-                  {[['β_W (System Beta)','β (Market Beta)'],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
+                  {[[<>β<sub>W</sub> (System Beta)</>,<>β (Market Beta)</>],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
                     <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
                       <td style={{padding:'8px 12px',color:C.text}}>{s}</td>
                       <td style={{padding:'8px 12px',color:C.muted,fontFamily:C.serif}}>{c}</td>
@@ -477,7 +477,7 @@ export default function PSTCoalDashboard() {
       </div>
 
       
-      {/* 𝒮_W WELFARE EFFICIENCY RATIO */}
+      {/* 𝒮W WELFARE EFFICIENCY RATIO */}
       <div style={{padding:"24px",background:C.panel,border:"2px solid #D9770640",borderRadius:4,margin:"24px 0"}}>
         <div style={{fontFamily:C.mono,fontSize:12,color:"#D97706",letterSpacing:2,marginBottom:16}}>WELFARE EFFICIENCY RATIO</div>
         <div style={{display:"flex",alignItems:"baseline",gap:12,marginBottom:12}}>
