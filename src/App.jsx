@@ -384,9 +384,6 @@ export default function PSTCoalDashboard() {
           </div>
         )}
 
-          </div>
-        )}
-
         {/* THRESHOLDS TAB */}
         {tab === 'thresholds' && (
           <div>
